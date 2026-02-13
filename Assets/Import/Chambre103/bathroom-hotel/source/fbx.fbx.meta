@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: ff419d53c4b82bc4284e1e3d2a48c820
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 2alpaca-15adddd
+    second: {fileID: 2800000, guid: 7c168c011c96e0e46acc47a1243e3b7f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 3f25a0de28771e99df34dad68fdff7f5224c718726273-Krs6KB_fw658
+    second: {fileID: 2800000, guid: 8e02223bc61f5bc4c943d6a750b9e2a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RockSmooth_b
+    second: {fileID: 2800000, guid: e95f3c5074899ad4ebe52d39ac432279, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RockSmooth_d
+    second: {fileID: 2800000, guid: f6d643217f833cd4288911615e04213f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: c589ba23213328a37d14718859216a17
+    second: {fileID: 2800000, guid: 54cf1901ff015584d9ce81f5f03b00a3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cord_b
+    second: {fileID: 2800000, guid: 033d4b39891631d47afeffb478c01f67, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cord_d
+    second: {fileID: 2800000, guid: f90df43b04cd04646998ed0e637974ba, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: linen02_b
+    second: {fileID: 2800000, guid: a28648ce6242e154a87ad91e37464e89, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: linen02_d
+    second: {fileID: 2800000, guid: 9c2f5519df008004199356ad2801db56, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: linen_4_b
+    second: {fileID: 2800000, guid: 884c68bcb9271f54484036ac9cddcd61, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: orchid_b
+    second: {fileID: 2800000, guid: ad41a7ba3540d564f8cb4b72d9c43744, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: orchid_d
+    second: {fileID: 2800000, guid: b61146c461be00647b879ebcb7535d81, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: orchid_d01
+    second: {fileID: 2800000, guid: e1922d7434dab0a45ad8a05dccade083, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: orchid_op
+    second: {fileID: 2800000, guid: fc8dbb25f1225724b89c3af9a62ab8ad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: orchid_tr
+    second: {fileID: 2800000, guid: 862c9168804230248822ccacde4483cf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: stitching_b
+    second: {fileID: 2800000, guid: 9b50c3f4a5a0c5842933a8a365f93cdb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tow_03
+    second: {fileID: 2800000, guid: 9c1cc735762117a4c83ef19c91fcbb10, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tow_color
+    second: {fileID: 2800000, guid: 81abd70453ef23541b2a2d44a1023570, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tow_color_01
+    second: {fileID: 2800000, guid: 5e6705b103f8b27448367a036d9be10b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tow_lily
+    second: {fileID: 2800000, guid: 60ad07bec6c2f864d9bec62806971cc1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_shoulder_b
+    second: {fileID: 2800000, guid: 2ad36d5f5fa2bc740909c1f93f3d6e61, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_shoulder_d
+    second: {fileID: 2800000, guid: 8e8f915ab4ffa6841bf882b0837d40f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: xiadele_js002
+    second: {fileID: 2800000, guid: f4f50b29556f7d64b9fdaaffcbf8126f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: xiadele_js005
+    second: {fileID: 2800000, guid: 04469d175636c5947af4ce8464ca7a2f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u6728\u7EB9\u77F3\u526F\u672C\u526F\u672C"
+    second: {fileID: 2800000, guid: 705100e681e60e148b1b8d3dcf3da9c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u767D\u7389\u5170"
+    second: {fileID: 2800000, guid: 484a1e76c9e9815418f4d753bf920533, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u8D64\u6768\u6749-7"
+    second: {fileID: 2800000, guid: 917ff325b38437f48bdded48c03335fa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u9ED1\u80E1\u6843\uFF1A\u9ED1\u80E1\u684311"
+    second: {fileID: 2800000, guid: f38941442a5b998419d7b28fd60d196a, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
