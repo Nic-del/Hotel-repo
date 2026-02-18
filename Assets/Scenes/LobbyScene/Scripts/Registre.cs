@@ -11,6 +11,8 @@ public class Registre : MonoBehaviour
     public GameObject Registre_part2;
     public GameObject Registre_part3;
 
+    public GameObject otherIcons;
+
     public TMP_InputField roomInput;
     public AudioSource correctSound;
     public AudioSource wrongSound;
@@ -45,6 +47,7 @@ public class Registre : MonoBehaviour
             FirstPuzzleSolved=true;
             Registre_part2.SetActive(false);
             Registre_part3.SetActive(true);
+            otherIcons.SetActive(true);
         }
         else
         {
