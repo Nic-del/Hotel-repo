@@ -16,13 +16,21 @@ namespace NavKeypad
 
 
         public void PressButton()
-        {
-            if (!moving)
-            {
-                keypad.AddInput(value);
-                StartCoroutine(MoveSmooth());
-            }
-        }
+{
+    // AJOUTE CETTE LIGNE DE DEBUG
+    Debug.Log("J'ai appuyé sur le bouton : " + value); 
+
+    if (!moving)
+    {
+        keypad.AddInput(value);
+        StartCoroutine(MoveSmooth());
+    }
+    else
+    {
+        // AJOUTE CELLE-CI AUSSI
+        Debug.Log("Le bouton bouge déjà, clic ignoré.");
+    }
+}
         private bool moving;
 
         private IEnumerator MoveSmooth()

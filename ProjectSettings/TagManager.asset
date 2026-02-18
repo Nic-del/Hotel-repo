@@ -11,6 +11,7 @@ TagManager:
   - Destroyer
   - Crowbar
   - Fuse
+  - Cassette
   layers:
   - Default
   - TransparentFX
