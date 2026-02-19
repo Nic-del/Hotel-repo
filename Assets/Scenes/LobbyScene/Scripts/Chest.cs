@@ -11,6 +11,7 @@ public class Chest : MonoBehaviour
 
     public GameObject ChestCanvas1;
     public GameObject ChestCanvas2;
+    public GameObject NewspaperIcon;
 
     public bool CodeFound = false;
 
@@ -43,6 +44,7 @@ public class Chest : MonoBehaviour
             CodeFound = true;
             ChestCanvas1.SetActive(false);
             ChestCanvas2.SetActive(true);
+            NewspaperIcon.SetActive(false);
         }
         else
         {
