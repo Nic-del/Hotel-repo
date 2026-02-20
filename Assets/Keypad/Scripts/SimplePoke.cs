@@ -1,39 +1,104 @@
 using UnityEngine;
-using NavKeypad; // On utilise le namespace de ton asset
+using UnityEngine.Events;
+using System.Collections;
+using NavKeypad;
 
 public class SimplePoke : MonoBehaviour
 {
-    private KeypadButton btnScript;
-    private float cooldown = 0f; // Pour éviter de cliquer 10 fois en 1 seconde
+    [Header("Actions (Logique)")]
+    public UnityEvent onPoke;
+
+    [Header("Audio")]
+    public AudioClip soundEffect; // Glisse le son "Bip" ici
+
+    [Header("Réglages Animation")]
+    public float btnSpeed = 0.1f;
+    public float moveDist = -0.0025f; // Mettre négatif pour descendre
+    public float pressTime = 0.1f;
+    
+    public enum ButtonAxis { AxeX_Rouge, AxeY_Vert, AxeZ_Bleu }
+    public ButtonAxis axeDePoussee = ButtonAxis.AxeY_Vert; // Par défaut Y pour tes boutons TV
+
+    // Variables internes
+    private KeypadButton keypadBtn;
+    private AudioSource audioSource;
+    private float cooldown = 0f;
+    private bool isAnimating = false;
+    private Vector3 startPos;
 
     void Start()
     {
-        // On récupère le script du bouton automatiquement
-        btnScript = GetComponent<KeypadButton>();
+        startPos = transform.localPosition;
+        keypadBtn = GetComponent<KeypadButton>();
+        
+        // On récupère ou on ajoute l'AudioSource automatiquement
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.spatialBlend = 1f; // Son en 3D
+            audioSource.playOnAwake = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Si l'objet qui touche a le tag "Player" (Ton doigt)
         if (other.CompareTag("Player"))
         {
-            // On vérifie le cooldown
-            if (Time.time > cooldown)
+            if (Time.time > cooldown && !isAnimating)
             {
-                // CORRECTION ICI : On utilise "value" (minuscule) si elle est publique,
-                // mais elle est "private" dans le script d'origine.
-                // On va donc afficher juste un message générique si on ne peut pas lire la valeur.
-                Debug.Log("DOIGT DÉTECTÉ SUR LE BOUTON !");
-                
-                // On appuie sur le bouton
-                if(btnScript != null) 
+                // 1. Jouer le son
+                if (audioSource != null && soundEffect != null)
                 {
-                    btnScript.PressButton();
+                    audioSource.PlayOneShot(soundEffect);
                 }
+
+                // 2. Logique
+                if(keypadBtn != null) keypadBtn.PressButton();
+                onPoke.Invoke();
+
+                // 3. Animation
+                StartCoroutine(AnimateButton());
                 
-                // On attend 0.3 secondes avant de pouvoir recliquer
-                cooldown = Time.time + 0.3f; 
+                cooldown = Time.time + (btnSpeed * 2) + pressTime + 0.1f; 
             }
         }
+    }
+
+    private IEnumerator AnimateButton()
+    {
+        isAnimating = true;
+        
+        Vector3 pushDirection = Vector3.zero;
+        switch (axeDePoussee)
+        {
+            case ButtonAxis.AxeX_Rouge: pushDirection = new Vector3(moveDist, 0, 0); break;
+            case ButtonAxis.AxeY_Vert: pushDirection = new Vector3(0, moveDist, 0); break;
+            case ButtonAxis.AxeZ_Bleu: pushDirection = new Vector3(0, 0, moveDist); break;
+        }
+
+        Vector3 endPos = startPos + pushDirection;
+
+        float elapsed = 0;
+        while (elapsed < btnSpeed)
+        {
+            elapsed += Time.deltaTime;
+            transform.localPosition = Vector3.Lerp(startPos, endPos, elapsed / btnSpeed);
+            yield return null;
+        }
+        transform.localPosition = endPos;
+
+        yield return new WaitForSeconds(pressTime);
+
+        elapsed = 0;
+        while (elapsed < btnSpeed)
+        {
+            elapsed += Time.deltaTime;
+            transform.localPosition = Vector3.Lerp(endPos, startPos, elapsed / btnSpeed);
+            yield return null;
+        }
+        transform.localPosition = startPos;
+
+        isAnimating = false;
     }
 }
