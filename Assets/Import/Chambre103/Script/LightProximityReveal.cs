@@ -1,73 +1,55 @@
 using UnityEngine;
 using TMPro;
-using System.Collections.Generic;
 
 public class LightProximityReveal : MonoBehaviour
 {
-    public List<TextMeshPro> targetTexts; // ← visible inspector
+    public TextMeshPro targetText;
     public float fadeSpeed = 2f;
 
-    private Dictionary<TextMeshPro, float> alphas =
-        new Dictionary<TextMeshPro, float>();
+    private float currentAlpha = 0f;
+    private bool isTouching = false;
 
     void Start()
     {
-        foreach (var t in targetTexts)
-        {
-            alphas[t] = 0f;
-            ApplyAlpha(t, 0f);
-        }
+        SetAlpha(0f); // invisible au départ
     }
 
     void Update()
     {
-        foreach (var t in targetTexts)
-        {
-            float target = IsTouching(t) ? 1f : 0f;
+        float targetAlpha = isTouching ? 1f : 0f;
 
-            alphas[t] = Mathf.MoveTowards(
-                alphas[t],
-                target,
-                fadeSpeed * Time.deltaTime
-            );
+        currentAlpha = Mathf.MoveTowards(
+            currentAlpha,
+            targetAlpha,
+            fadeSpeed * Time.deltaTime
+        );
 
-            ApplyAlpha(t, alphas[t]);
-        }
+        SetAlpha(currentAlpha);
     }
 
-    bool IsTouching(TextMeshPro text)
+    void OnTriggerEnter(Collider other)
     {
-        Vector3 origin = transform.position;
-        Vector3 forward = transform.forward;
+        if (!other.CompareTag("Text")) return;
 
-        Vector3 toText = text.transform.position - origin;
+        Debug.Log("Ajout d'une note TEST");
+        JournalManager.Instance.AjouterInfo("Code chambre 103 : 7 3 12 1");
+        FindObjectOfType<TabletJournal>()?.AfficherToutesInfos();
+        isTouching = true;
+    }
 
-        float maxDistance = 70f;   // longueur du faisceau
-        float coneAngle = 70f;    // ouverture du faisceau
+    void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Text")) return;
 
-        // 1️⃣ trop loin
-        if (toText.magnitude > maxDistance)
-            return false;
-
-        // 2️⃣ derrière la lampe
-        if (Vector3.Dot(forward, toText.normalized) <= 0f)
-            return false;
-
-        // 3️⃣ angle du cône
-        float angle = Vector3.Angle(forward, toText);
-
-        if (angle < coneAngle)
-            return true;
-
-        return false;
+        Debug.Log("EXIT : " + other.name);
+        isTouching = false;
     }
 
 
-
-    void ApplyAlpha(TextMeshPro text, float a)
+    void SetAlpha(float a)
     {
-        Color c = text.color;
-        c.a = a;
-        text.color = c;
+        Color c = targetText.color;
+        c.a = Mathf.Clamp01(a);
+        targetText.color = c;
     }
 }
